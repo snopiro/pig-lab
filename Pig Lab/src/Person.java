@@ -7,13 +7,15 @@ public class Person {
 	private int score;
 	
 	//initializing scanner
-	Scanner sc = new Scanner();
+	Scanner sc = new Scanner(System.in);
 	
 	//default constructor
 	public Person() {
 		name = "filler";
 		score = 0;
 	}
+	
+	
 	
 	
 	
