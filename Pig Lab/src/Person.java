@@ -4,7 +4,19 @@ public class Person {
 	
 	//instance variables
 	private String name;
-	//testing conflicts
-	Scanner sc = new Scanner();
+	private int score;
+	
+	//initializing scanner
+	Scanner sc = new Scanner(System.in);
+	
+	//default constructor
+	public Person() {
+		name = "filler";
+		score = 0;
+	}
+	
+	
+	
+	
 	
 }
