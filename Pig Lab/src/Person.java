@@ -27,6 +27,10 @@ public class Person {
 	//roll method
 	public void roll(boolean isTrue) {
 		if(isTrue) {
+			int dice = (int) Math.random() * 5 + 1;
+			if(dice>1) {
+				score += dice;
+			}
 			
 		}
 	}
