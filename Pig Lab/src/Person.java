@@ -1,4 +1,4 @@
-import Java.util.Scanner;
+import java.util.Scanner;
 
 public class Person {
 	
@@ -9,14 +9,25 @@ public class Person {
 	//initializing scanner
 	Scanner sc = new Scanner(System.in);
 	
-	//default constructor
-	public Person() {
-		name = "filler";
+	//constructor
+	public Person(String _name) {
+		name = _name;
 		score = 0;
+	}	
+	
+	//getters
+	public String getName() {
+		return name;
 	}
 	
+	public int getScore() {
+		return score;
+	}
 	
-	
-	
-	
+	//roll method
+	public void roll(boolean isTrue) {
+		if(isTrue) {
+			
+		}
+	}
 }
