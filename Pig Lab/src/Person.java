@@ -29,9 +29,16 @@ public class Person {
 		if(isTrue) {
 			int dice = (int) Math.random() * 5 + 1;
 			if(dice>1) {
-				score += dice;
+				score += dice;	
 			}
-			
+			else
+				bust();
+				
 		}
+	}
+	
+	//bust method
+	public void bust() {
+		System.out.println();
 	}
 }
