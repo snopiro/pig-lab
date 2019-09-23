@@ -17,7 +17,8 @@ public class Pig {
 		System.out.println("score. After each successful roll, you may try to ");
 		System.out.println("roll again. If you are a greedy bastard and you roll a");
 		System.out.println("1, you lose all of your banked score. If you're a safe");
-		System.out.println("bitch, you can add the banked score to your real score");
+		System.out.println("bitch, you can add the banked score to your real score.");
+		System.out.println();
 	}
 	
 	public void setPlayers() {
@@ -26,6 +27,13 @@ public class Pig {
 		Person person1 = new Person();
 		System.out.print("Name of player 2: ");
 		Person person2 = new Person();
+		System.out.println();
+		
+	}
+	
+	public void setTurn() {
+		
+		System.out.println();
 		
 	}
 	
