@@ -12,7 +12,7 @@ public class Person {
 	
 	//constructor
 	public Person() {
-		name = sc.next();
+		name = "default";
 		score = 0;
 	}	
 	
@@ -25,27 +25,64 @@ public class Person {
 		return score;
 	}
 	
-	//roll method
-	public void roll(boolean isTrue) {
-		
-		fakescore = score;
-		
-		if(isTrue) {
-			int dice = (int) Math.random() * 5 + 1;
-			if(dice>1) {
-				fakescore += dice;	
-			}
-			else
-				bust();
-				
-		}
-		else {
-			score = fakescore;
-		}
+	//setters
+	public void setName(String _name) {
+		name = _name;
 	}
 	
-	//bust method
-	public void bust() {
-		System.out.println();
+	public void setScore(int _score){
+		score = _score;
+	}
+	
+	//roll methods
+	//rolling for turn deciding roll
+	public int initialRoll() {
+		return (int)(Math.random() * 6 + 1);
+	}
+	
+	//general rolling
+	public void roll(boolean isTrue) {
+
+		fakescore = 0;
+		
+		//this will continue as long as player wants to keep rolling.
+		while(isTrue) {
+			
+			//generates dice roll
+			int dice = (int)(Math.random() * 6 + 1);
+			System.out.print(getName() + " has rolled a " + dice + ". ");
+			
+			//if dice roll is greater than one
+			if(dice>1) {
+				//banked score increases by that much.
+				fakescore += dice;	
+				System.out.println(getName() + "'s banked score: " + fakescore);
+				
+				//asks if player wants to roll again. 
+				System.out.print(getName() + " wants to roll again. t/f? ");
+				//if yes, continues rolling
+				if(sc.next().equals("t")) {
+					isTrue = true;
+					System.out.println();
+				}
+				//if no, breaks loop.
+				else{
+					isTrue = false;
+					System.out.println();
+				}
+			}
+			
+			//bust if player lands on 1. banked score set to 0 and breaks loop
+			else if(dice == 1){
+				System.out.println("Bust. Unlucky.");
+				fakescore = 0;
+				isTrue = false;
+				System.out.println();
+				
+			}
+		}
+		
+		score += fakescore; //adding banked score onto total score
+		
 	}
 }
